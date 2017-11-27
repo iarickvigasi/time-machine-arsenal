@@ -18,6 +18,7 @@
   "homepage": "https://github.com/yaroslavvyhivskyi/time-machine-arsenal#readme",
   "dependencies": {
     "keypress": "^0.2.1",
-    "omx-manager": "^0.1.4"
+    "omx-manager": "^0.1.4",
+    "rpi-gpio": "^0.9.1"
   }
 }

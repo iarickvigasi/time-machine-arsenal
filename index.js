@@ -1,24 +1,12 @@
-var stdin = process.stdin;
+var gpio = require('rpi-gpio');
 
-// without this, we would only get streams once enter is pressed
-stdin.setRawMode( true );
-
-// resume stdin in the parent process (node app won't quit all by itself
-// unless an error or process.exit() happens)
-stdin.resume();
-
-// i don't want binary, do you?
-stdin.setEncoding( 'utf8' );
-
-// on any data into stdin
-stdin.on( 'data', function( key ){
-  // ctrl-c ( end of text )
-  if ( key === '\u0003' ) {
-    process.exit();
-  }
-  // write the key to stdout all normal like
-  process.stdout.write( key );
+gpio.on('change', function(channel, value) {
+    console.log('Channel ' + channel + ' value is now ' + value);
 });
+gpio.setup(17, gpio.DIR_HIGH, gpio.EDGE_BOTH);
+gpio.setup(18, gpio.DIR_HIGH, gpio.EDGE_BOTH);
+gpio.setup(22, gpio.DIR_HIGH, gpio.EDGE_BOTH);
+gpio.setup(27, gpio.DIR_HIGH, gpio.EDGE_BOTH);
 
 // var keypress = require('keypress');
 // var OmxManager = require('omx-manager');
