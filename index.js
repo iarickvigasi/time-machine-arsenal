@@ -30,8 +30,8 @@ function play1789() {
     indexCamera.stop();
     indexCamera = manager.create('1789_rotate.mov');
     indexCamera.play();
-    return indexCamera;
   }
+  return indexCamera;
 }
 
 function play1850() {
@@ -40,8 +40,8 @@ function play1850() {
     indexCamera.stop();
     indexCamera = manager.create('1850_rotate.mov');
     indexCamera.play();
-    return indexCamera;
   }
+  return indexCamera;
 }
 
 function play1900() {
@@ -50,8 +50,8 @@ function play1900() {
     indexCamera.stop();
     indexCamera = manager.create('1900_rotate.mov');
     indexCamera.play();
-    return indexCamera;
   }
+  return indexCamera;
 }
 
 function play1950() {
@@ -60,8 +60,8 @@ function play1950() {
     indexCamera.stop();
     indexCamera = manager.create('1950_rotate.mov');
     indexCamera.play();
-    return indexCamera;
   }
+  return indexCamera;
 }
 
 // listen for the "keypress" event
