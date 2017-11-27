@@ -14,9 +14,10 @@ var manager = new OmxManager(); // OmxManager
 // camera.play(); // Will start the process to play videos
 
 var indexCamera = playIndex()
-
+var isPlaying = false;
 // Play initial
 function playIndex() {
+  isPlaying = false;
   manager.enableNativeLoop();
   var camera = manager.create('index_rotate.mov', {'--loop': true}); // OmxInstance
   camera.play(); // Will start the process to play videos
@@ -24,31 +25,43 @@ function playIndex() {
 }
 
 function play1789() {
-  indexCamera.stop();
-  indexCamera = manager.create('1789_rotate.mov');
-  indexCamera.play();
-  return indexCamera;
+  if (!isPlaying) {
+    isPlaying = true;
+    indexCamera.stop();
+    indexCamera = manager.create('1789_rotate.mov');
+    indexCamera.play();
+    return indexCamera;
+  }
 }
 
 function play1850() {
-  indexCamera.stop();
-  indexCamera = manager.create('1850_rotate.mov');
-  indexCamera.play();
-  return indexCamera;
+  if (!isPlaying) {
+    isPlaying = true;
+    indexCamera.stop();
+    indexCamera = manager.create('1850_rotate.mov');
+    indexCamera.play();
+    return indexCamera;
+  }
 }
 
 function play1900() {
-  indexCamera.stop();
-  indexCamera = manager.create('1900_rotate.mov');
-  indexCamera.play();
-  return indexCamera;
+  if (!isPlaying) {
+    isPlaying = true;
+    indexCamera.stop();
+    indexCamera = manager.create('1900_rotate.mov');
+    indexCamera.play();
+    return indexCamera;
+  }
 }
 
 function play1950() {
-  indexCamera.stop();
-  indexCamera = manager.create('1900_rotate.mov');
-  indexCamera.play();
-  return indexCamera;
+  if (!isPlaying) {
+    isPlaying = true;
+    indexCamera.stop();
+    indexCamera = manager.create('1950_rotate.mov');
+    indexCamera.play();
+    return indexCamera;
+  }
 }
 
 // listen for the "keypress" event
