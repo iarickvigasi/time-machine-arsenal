@@ -46,24 +46,25 @@ function play1950() {
 keypress(process.stdin);
 // listen for the "keypress" event
 process.stdin.on('keypress', function (ch, key) {
-  if (key.keyCode == 78) {
+  console.log('got "keypress"', key);
+
+  if (key.name == 'n') {
     var camera = play1789()
     camera.on('end', playIndex);
   }
-  else if (key.keyCode == 77) {
+  else if (key.keyCode == 'm') {
     var camera = play1850()
     camera.on('end', playIndex);
   }
-  else if (key.keyCode == 188) {
-    var camera = play1900()
-    camera.on('end', playIndex);
-  }
-  else if (key.keyCode == 190) {
-    var camera = play1950()
-    camera.on('end', playIndex);
-  }
+  // else if (key.keyCode == 188) {
+  //   var camera = play1900()
+  //   camera.on('end', playIndex);
+  // }
+  // else if (key.keyCode == 190) {
+  //   var camera = play1950()
+  //   camera.on('end', playIndex);
+  // }
 
-  console.log('got "keypress"', key);
   if (key && key.ctrl && key.name == 'c') {
     process.stdin.pause();
   }
