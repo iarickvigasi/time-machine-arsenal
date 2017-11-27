@@ -13,15 +13,14 @@ var manager = new OmxManager(); // OmxManager
 // var camera = manager.create('video.avi'); // OmxInstance
 // camera.play(); // Will start the process to play videos
 
-var indexCamera = playIndex()
+var indexCamera;
 var isPlaying = false;
 // Play initial
 function playIndex() {
   isPlaying = false;
   manager.enableNativeLoop();
-  var camera = manager.create('index_rotate.mov', {'--loop': true}); // OmxInstance
-  camera.play(); // Will start the process to play videos
-  return camera;
+  indexCamera = manager.create('index_rotate.mov', {'--loop': true}); // OmxInstance
+  indexCamera.play(); // Will start the process to play videos
 }
 
 function play1789() {
@@ -30,8 +29,8 @@ function play1789() {
     indexCamera.stop();
     indexCamera = manager.create('1789_rotate.mov');
     indexCamera.play();
+    indexCamera.on('end', playIndex);
   }
-  return indexCamera;
 }
 
 function play1850() {
@@ -40,8 +39,8 @@ function play1850() {
     indexCamera.stop();
     indexCamera = manager.create('1850_rotate.mov');
     indexCamera.play();
+    indexCamera.on('end', playIndex);
   }
-  return indexCamera;
 }
 
 function play1900() {
@@ -50,8 +49,8 @@ function play1900() {
     indexCamera.stop();
     indexCamera = manager.create('1900_rotate.mov');
     indexCamera.play();
+    indexCamera.on('end', playIndex);
   }
-  return indexCamera;
 }
 
 function play1950() {
@@ -60,8 +59,8 @@ function play1950() {
     indexCamera.stop();
     indexCamera = manager.create('1950_rotate.mov');
     indexCamera.play();
+    indexCamera.on('end', playIndex);
   }
-  return indexCamera;
 }
 
 // listen for the "keypress" event
@@ -69,19 +68,15 @@ function handleKeyPress(key) {
   console.log('got "keypress"', key);
 
   if (key.code == 49) {
-    var camera = play1789()
-    camera.on('end', playIndex);
+    play1789()
   }
   else if (key.code == 50) {
-    var camera = play1850()
-    camera.on('end', playIndex);
+    play1850()
   }
   else if (key.code == 51) {
-    var camera = play1900()
-    camera.on('end', playIndex);
+    play1900()
   }
   else if (key.code == 52) {
-    var camera = play1950()
-    camera.on('end', playIndex);
+    play1950()
   }
 }
