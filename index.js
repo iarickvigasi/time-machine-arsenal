@@ -80,3 +80,5 @@ function handleKeyPress(key) {
     play1950()
   }
 }
+
+playIndex()
