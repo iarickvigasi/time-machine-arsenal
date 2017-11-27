@@ -25,28 +25,28 @@ function playIndex() {
 
 function play1789() {
   indexCamera.stop();
-  var camera = manager.create('1789_rotate.mov');
+  indexCamera = manager.create('1789_rotate.mov');
   camera.play();
   return camera;
 }
 
 function play1850() {
   indexCamera.stop();
-  var camera = manager.create('1850_rotate.mov');
+  indexCamera = manager.create('1850_rotate.mov');
   camera.play();
   return camera;
 }
 
 function play1900() {
   indexCamera.stop();
-  var camera = manager.create('1900_rotate.mov');
+  indexCamera = manager.create('1900_rotate.mov');
   camera.play();
   return camera;
 }
 
 function play1950() {
   indexCamera.stop();
-  var camera = manager.create('1900_rotate.mov');
+  indexCamera = manager.create('1900_rotate.mov');
   camera.play();
   return camera;
 }
