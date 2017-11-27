@@ -26,29 +26,29 @@ function playIndex() {
 function play1789() {
   indexCamera.stop();
   indexCamera = manager.create('1789_rotate.mov');
-  camera.play();
-  return camera;
+  indexCamera.play();
+  return indexCamera;
 }
 
 function play1850() {
   indexCamera.stop();
   indexCamera = manager.create('1850_rotate.mov');
-  camera.play();
-  return camera;
+  indexCamera.play();
+  return indexCamera;
 }
 
 function play1900() {
   indexCamera.stop();
   indexCamera = manager.create('1900_rotate.mov');
-  camera.play();
-  return camera;
+  indexCamera.play();
+  return indexCamera;
 }
 
 function play1950() {
   indexCamera.stop();
   indexCamera = manager.create('1900_rotate.mov');
-  camera.play();
-  return camera;
+  indexCamera.play();
+  return indexCamera;
 }
 
 // listen for the "keypress" event
