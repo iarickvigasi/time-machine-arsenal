@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<title>TimeMachine</title>
+
+<style type="text/css" media="screen">
+html, body {
+	margin: 0;
+	border: 0;
+	overflow: hidden;
+}
+video {
+    width: 1920px;
+    height: 1080px;
+}
+</style>
+
+</head>
+
+<body>
+	
+<video id="video">
+  <source src="index_rotate.mov" id="mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+	
+<script type="text/javascript">
+	var vid = document.getElementById('video');
+	var mp4 = document.getElementById('mp4');
+	vid.loop = true;
+	vid.play();
+	index = true;
+	
+	window.addEventListener("keydown", checkKeyPressed, false);
+ 
+	function checkKeyPressed(e) {
+	    if (e.keyCode == "49" & index == true) {
+	        mp4.src = "1789_rotate.mov";
+			vid.load();
+			vid.loop = false;
+			vid.play();
+			index = false;
+			
+			setTimeout(playindex, 5000);
+	    }
+		
+	    if (e.keyCode == "50" & index == true) {
+	        mp4.src = "1850_rotate.mov";
+			vid.load();
+			vid.loop = false;
+			vid.play();
+			index = false;
+			
+			setTimeout(playindex, 5000);
+	    }
+		
+	    if (e.keyCode == "51" & index == true) {
+	        mp4.src = "1900_rotate.mov";
+			vid.load();
+			vid.loop = false;
+			vid.play();
+			index = false;
+			
+			setTimeout(playindex, 5000);
+	    }
+		
+	    if (e.keyCode == "52" & index == true) {
+	        mp4.src = "1950_rotate.mov";
+			vid.load();
+			vid.loop = false;
+			vid.play();
+			index = false;
+			
+			setTimeout(playindex, 5000);
+	    }
+	}
+	
+	function playindex() {
+		vid.onended = function() {
+	        mp4.src = "index_rotate.mov";
+			vid.load();
+			vid.loop = true;
+			vid.play();
+			index = true;
+		}
+	}
+</script>
+
+
+</body>
+
+</html>
