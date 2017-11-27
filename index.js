@@ -1,12 +1,12 @@
-var gpio = require('rpi-gpio');
+var InputEvent = require('input-event');
 
-gpio.on('change', function(channel, value) {
-    console.log('Channel ' + channel + ' value is now ' + value);
-});
-gpio.setup(17, gpio.DIR_HIGH, gpio.EDGE_BOTH);
-gpio.setup(18, gpio.DIR_HIGH, gpio.EDGE_BOTH);
-gpio.setup(22, gpio.DIR_HIGH, gpio.EDGE_BOTH);
-gpio.setup(27, gpio.DIR_HIGH, gpio.EDGE_BOTH);
+var input = new InputEvent('/dev/input/event0');
+
+var keyboard = new InputEvent.Keyboard(input);
+
+keyboard.on('keyup'   , console.log);
+keyboard.on('keydown' , console.log);
+keyboard.on('keypress', console.log);
 
 // var keypress = require('keypress');
 // var OmxManager = require('omx-manager');
