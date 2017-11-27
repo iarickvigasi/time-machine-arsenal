@@ -48,22 +48,22 @@ keypress(process.stdin);
 process.stdin.on('keypress', function (ch, key) {
   console.log('got "keypress"', key);
 
-  if (key.name == 'n') {
+  if (key.name == 'a') {
     var camera = play1789()
     camera.on('end', playIndex);
   }
-  else if (key.keyCode == 'm') {
+  else if (key.keyCode == 's') {
     var camera = play1850()
     camera.on('end', playIndex);
   }
-  // else if (key.keyCode == 188) {
-  //   var camera = play1900()
-  //   camera.on('end', playIndex);
-  // }
-  // else if (key.keyCode == 190) {
-  //   var camera = play1950()
-  //   camera.on('end', playIndex);
-  // }
+  else if (key.name == 'd') {
+    var camera = play1900()
+    camera.on('end', playIndex);
+  }
+  else if (key.name == 'f') {
+    var camera = play1950()
+    camera.on('end', playIndex);
+  }
 
   if (key && key.ctrl && key.name == 'c') {
     process.stdin.pause();
