@@ -54,25 +54,21 @@ function play1950() {
 // listen for the "keypress" event
 function handleKeyPress(key) {
   console.log('got "keypress"', key);
-  //
-  // if (key.name == 'a') {
-  //   var camera = play1789()
-  //   camera.on('end', playIndex);
-  // }
-  // else if (key.keyCode == 's') {
-  //   var camera = play1850()
-  //   camera.on('end', playIndex);
-  // }
-  // else if (key.name == 'd') {
-  //   var camera = play1900()
-  //   camera.on('end', playIndex);
-  // }
-  // else if (key.name == 'f') {
-  //   var camera = play1950()
-  //   camera.on('end', playIndex);
-  // }
-  //
-  // if (key && key.ctrl && key.name == 'c') {
-  //   process.stdin.pause();
-  // }
+
+  if (key.code == 49) {
+    var camera = play1789()
+    camera.on('end', playIndex);
+  }
+  else if (key.code == 50) {
+    var camera = play1850()
+    camera.on('end', playIndex);
+  }
+  else if (key.code == 51) {
+    var camera = play1900()
+    camera.on('end', playIndex);
+  }
+  else if (key.code == 52) {
+    var camera = play1950()
+    camera.on('end', playIndex);
+  }
 }
